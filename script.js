@@ -52,6 +52,26 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth'
         });
     });
+
+    const newSectionArrow = document.getElementById('newSectionArrow');
+    newSectionArrow.addEventListener('click', () => {
+        document.querySelector('.main_Content4').scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+
+    const anatomyGridItems = document.querySelectorAll('.anatomy-grid-item');
+    anatomyGridItems.forEach(item => {
+        const img = item.querySelector('img');
+        if (img) {
+            item.addEventListener('mouseenter', () => {
+                img.style.filter = 'blur(0)';
+            });
+            item.addEventListener('mouseleave', () => {
+                img.style.filter = 'blur(2px)';
+            });
+        }
+    });
 });
 
 let scrollTimeout;
