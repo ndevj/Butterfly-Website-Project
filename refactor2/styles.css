@@ -15,9 +15,6 @@ body {
 #content_lc, #content_fc, #content_ba, #content_ea, #content_un header footer {
     min-height: 100vh;
     box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin: 0;
     padding: 3%;
 }
@@ -218,9 +215,10 @@ footer {
 
 
 .lc-grid-item {
-    padding: 5px 0; /* Remove left and right padding */
+    padding: 5px 0; 
     max-width: 100%;
-    font-size: clamp(1rem, 0.954rem + 0.205vi, 1.2rem);
+    font-size: 1.1rem;
+    font-weight: 300;
     overflow: hidden; 
     /* min-height:100% ; */
 }
@@ -291,8 +289,9 @@ footer {
 
 .lc-desc-p {
     font-size: 1rem;
-    line-height: 1.4rem;
+    line-height: 1.5rem;
     margin: 0;
+    font-weight: 300;
     
     padding-bottom: 0.7rem;
 }
@@ -305,12 +304,13 @@ footer {
     padding: 10px;
     padding-bottom: 15px;
     padding-left:  0px;
+    padding-right: 0;
     background-color: rgba(255, 255, 255, 0);
     border-radius: 10px;
     /* -webkit-box-shadow: 0px 13px 27px -21px rgba(0,0,0,0.61);
     -moz-box-shadow: 0px 13px 27px -21px rgba(0,0,0,0.61);
     box-shadow: 0px 13px 27px -21px rgba(0,0,0,0.61); */
-    max-width: 400px; 
+    max-width: 400rem; 
     position: relative; 
 }
 
@@ -360,14 +360,86 @@ footer {
     justify-content: center;
     box-sizing: border-box;
 }
-
-.fc-grid-item{
-width: 90%;
-background-color: #7d0dff;
-border: 1px solid #000000;
-min-height: 20vh;
+.fc-grid-head{
+    height: min-content;
+    /* background-color: #0dff21; */
+    width: 90%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.8rem;
+    
 }
 
+.fc-grid-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+    /* background-color: #7d0dff;
+    border: 1px solid #000000; */
+    min-height: 20vh;
+    font-family: "Afacad Flux", sans-serif; 
+
+}
+.fc-grid-item .fc-head-text{
+    font-size: 1rem;
+}
+.fc-grid-item .fact-text{
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0;
+    font-weight: 30;
+    text-align: left;
+}
+ /* Buttefly Anatomy Content_ba--------------------------------------------------- */
+
+#content_ba{
+    background-color: #ff0d56;
+}
+#content_ba .full-size{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 0.6fr 0.4fr;
+    height: 100vh;
+}
+.full-size .ba-grid-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+    /* flex-grow: 1; */
+}
+
+.ba-grid-item:nth-child(1){
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+.ba-grid-item img{
+
+    width: 70%;
+    height: auto;
+    object-fit: fill;
+    border-radius: 10px;
+
+    -webkit-filter: drop-shadow(5px 5px 20px #e7e7e7);
+    filter: drop-shadow(5px 5px 20px #c7c7c7);
+}
+
+.x-ray-img{
+    position: absolute;
+    
+
+}
+.color-img{
+    clip-path: inset(0 50% 0 0);
+    transition: clip-path 0.5s;
+}
+
+
+ /* Animation & Other */
 
 .anim-gradient {
     background: linear-gradient(270deg, #0dffc0, #0dff21, #d9ff0d, #ffcf0d, #ff840d, #7d0dff, #ff0d56);
@@ -430,7 +502,8 @@ min-height: 20vh;
     transform: translateY(3px) rotate(45deg); 
 }
 
-/* mobile devices */
+/* mobile devices -----------------------------------------------*/
+
 @media (min-width: 360px) and (max-width: 480px) {
     .inner-full-size {
         display: flex;

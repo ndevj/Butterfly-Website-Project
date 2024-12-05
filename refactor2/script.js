@@ -40,18 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener("resize", logCurrentVH);
 
     // Handle hover events on videos
-    var videos = document.querySelectorAll(".life_cycle_vid");
-    var row4Cells = document.querySelectorAll(".inner-grid-row4 .lc-row4-cell");
 
-    videos.forEach(function(video, index) {
-        video.addEventListener("mouseenter", function() {
-            row4Cells[index].classList.add("fade-in");
-        });
-
-        video.addEventListener("mouseleave", function() {
-            row4Cells[index].classList.remove("fade-in");
-        });
-    });
 
     // // Lock the grid size at initial load
     // var lcGridContainer = document.querySelector(".lc-grid-container");
@@ -82,3 +71,9 @@ newSectionArrow.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+
+document.getElementById('imageSlider').addEventListener('input', function(e) {
+    const value = e.target.value;
+    document.querySelector('.color-img').style.clipPath = `inset(0 ${100 - value}% 0 0)`;
+});
+
