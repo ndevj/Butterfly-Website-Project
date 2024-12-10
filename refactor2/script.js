@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     fullSizeDiv.classList.add("visible");
 
     var targetScrollY = window.innerHeight * 0.44; // 44% of the viewport height
-    var fadeOutScrollY = (1600 / window.innerHeight) * window.innerHeight; // vh equivalent of 1600 pixels
+    var fadeOutScrollY = (1600 / window.innerHeight) * window.innerHeight; 
 
     window.addEventListener("scroll", function() {
         var scrollYValue = window.scrollY;
@@ -27,34 +27,25 @@ document.addEventListener("DOMContentLoaded", function() {
     var vhValue = (400 / viewportHeight) * 100;
     console.log("400 pixels is equivalent to " + vhValue + "vh");
 
-    // current viewport height in vh
+    
     function logCurrentVH() {
         var currentVH = (window.innerHeight / window.innerHeight) * 100;
         console.log("Current viewport height is " + currentVH + "vh");
     }
 
-    //function to log the current vh
+    
     logCurrentVH();
 
     
     window.addEventListener("resize", logCurrentVH);
 
-    // Handle hover events on videos
 
-
-    // // Lock the grid size at initial load
-    // var lcGridContainer = document.querySelector(".lc-grid-container");
-    // var initialWidth = lcGridContainer.offsetWidth;
-    // var initialHeight = lcGridContainer.offsetHeight;
-
-    // lcGridContainer.style.width = initialWidth + "px";
-    // lcGridContainer.style.height = initialHeight + "px";
 
     const slider = document.getElementById('imageSlider');
     const colorImg = document.querySelector('.color-img');
     const xRayImg = document.querySelector('.x-ray-img');
 
-    // Set initial slider position to 50%
+    
     slider.value = 50;
     colorImg.style.clipPath = `inset(0 ${100 - slider.value}% 0 0)`;
     xRayImg.style.clipPath = `inset(0 0 0 ${slider.value}%)`;
