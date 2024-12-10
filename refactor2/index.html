@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+
+    <script src="three.r134.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="vanta.fog.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
     <script src="script.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +39,7 @@
                             <a href="#content_fc">Interesting Facts</a>
                             <a href="#content_ba">Butterfly Anatomy</a>
                             <a href="#content_ea">Ecological Importance</a>
-                            <a href="#content_un">Human Impact</a>
+                            <a href="#content_un">Monarch Migration</a>
                         </nav>
 
                     </div>
@@ -43,8 +48,7 @@
         </div>
     </header>
     <section id="content_lc" > 
-        <div id="scrollArrow" class="scroll-arrow"></div> 
-        <div class="full-size" >
+        <div class=".full-size">
             <div class="lc-grid-container">
                 <div class="lc-grid-item">            
                     <p class="sub-heading">It all has to start somewhere. <br><i style="font-size:small;">Mouse over the videos for more info</i></p>
@@ -52,8 +56,8 @@
                 <div class="lc-grid-item">            
                     <p class="second-row">Butterflies are some of the most fascinating and visually stunning insects in the natural world. They belong to the order Lepidoptera, which also includes moths. Known for their vibrant colors and graceful flight, butterflies play crucial ecological roles as pollinators and as part of the food chain.</p>
                 </div>
-                <div class="lc-grid-item" >  
-                    <div class="inner-grid" >
+                <div class="lc-grid-item">
+                    <div class="inner-grid">
                         <div class="lc-video-desc-container">
                             <video class="life_cycle_vid" autoplay muted loop>
                                 <source src="videos/lifecycle_egg2.webm" type="video/webm">
@@ -87,8 +91,8 @@
                     </div>
                 </div>
                 
-                
-            </div>
+                <div id="scrollArrow" class="scroll-arrow"></div> 
+             </div>  
         </div>
     </section>
     <section id="content_fc">
@@ -104,31 +108,106 @@
     <section id="content_ba">
         <div class="full-size">
             <div class="ba-grid-item">
+                <div class="bubble-desc" data-title="WINGS." data-text="They're covered in tiny scales, which are actually modified hairs, and these scales give butterflies their vibrant colors and patterns. The colors come from a combination of pigments and structural coloration, where the microscopic structure of the scales refracts and reflects light."></div>
+                <div class="bubble-desc" data-title="EXO-SKELETON." data-text="Butterflies don't have skeletons in the way humans do. Instead, they possess an exoskeleton—a hard outer structure that provides support and protection. This exoskeleton is made of chitin, which is lightweight and flexible."></div>
+                <div class="bubble-desc" data-title="ANTENNAE." data-text="The primary role of the antennae is to detect scents. Butterflies use them to find food sources, locate mates, and sense their environment. They are equipped with chemoreceptors, which are specialized cells that can detect chemical signals in the air."></div>
+                <div class="bubble-desc" data-title="LEPIDOPTERAN SCALES." data-text="Butterfly scales cover their wings and body, providing vibrant colors and patterns through pigments and light refraction. These scales aid in thermoregulation, waterproofing, and predator deterrence through camouflage and mimicry."></div>
+                <div class="bubble-desc" data-title="THORAX." data-text="The thorax of a butterfly is divided into three segments and is responsible for movement. It supports the butterfly's legs and wings, housing strong muscles that power flight. The thorax also contains parts of the nervous system that coordinate wing and leg movements, enabling the butterfly's agile and precise flight."></div>
+                <div class="bubble-left">
+
+                </div>
+                
                 <img src="images/x-ray_butterfly.gif" alt="" class="x-ray-img">
                 <img src="images/x-ray_counter_butter.png" alt="" class="color-img">
                 
             </div>
             <div class="ba-grid-item">
-                <div class="ba-tile-desc">
-                    <input type="range" min="0" max="100" value="50" class="slider" id="imageSlider">
+                
+                <div class="slider-container">
+                    
+                    <input type="range" id="imageSlider" class="slider" min="0" max="100" value="50">
                 </div>
             </div>
         </div>
     </section>
     <section id="content_ea">
         <div class="full-size">
-            <h1>Content EA</h1>
+            <div class="ea-grid-container">
+                
+                    <div class="ea-grid-item">
+                        <div class="image-carousel">
+                            <div class="carousel-track">
+                                <!-- First set of images -->
+                                <img src="images/ea-flowers__0000_ea_1.jpg" alt="Flower 1">
+                                <img src="images/ea-flowers__0001_ea_2.jpg" alt="Flower 2">
+                                <img src="images/ea-flowers__0002_ea_3.jpg" alt="Flower 3">
+                                <img src="images/ea-flowers__0003_ea_4.jpg" alt="Flower 4">
+                                <img src="images/ea-flowers__0004_ea_5.jpg" alt="Flower 5">
+                                <img src="images/ea-flowers__0005_ea_6.jpg" alt="Flower 6">
+                                <img src="images/ea-flowers__0006_ea_7.jpg" alt="Flower 7">
+                                <img src="images/ea-flowers__0007_ea_8.jpg" alt="Flower 8">
+                                <!-- Duplicate set for seamless loop -->
+                                <img src="images/ea-flowers__0000_ea_1.jpg" alt="Flower 1">
+                                <img src="images/ea-flowers__0001_ea_2.jpg" alt="Flower 2">
+                                <img src="images/ea-flowers__0002_ea_3.jpg" alt="Flower 3">
+                                <img src="images/ea-flowers__0003_ea_4.jpg" alt="Flower 4">
+                                <img src="images/ea-flowers__0004_ea_5.jpg" alt="Flower 5">
+                                <img src="images/ea-flowers__0005_ea_6.jpg" alt="Flower 6">
+                                <img src="images/ea-flowers__0006_ea_7.jpg" alt="Flower 7">
+                                <img src="images/ea-flowers__0007_ea_8.jpg" alt="Flower 8">
+                            </div>
+                        </div>
+                    </div>
+                
+                <div class="ea-grid-item">
+                    <h1>ECOLOGICAL ENGINEERS</h1>
+                    <p>Ecosystem engineers are organisms that significantly modify, maintain, or create habitats and alter the availability of resources, thereby influencing the types and numbers of other organisms in the ecosystem.
+
+                    Butterflies can be considered ecosystem engineers because their activities, such as pollination and plant-feeding, help shape the vegetation structure and composition. This, in turn, affects the habitats and resources available to other species within the ecosystem. For example, their pollination efforts contribute to the reproduction of various flowering plants, supporting plant diversity and the organisms that depend on those plants for food and shelter.</p>
+                </div>
+                
+               
+            </div>
         </div>
     </section>
     <section id="content_un">
         <div class="full-size">
-            <h1>Content UN</h1>
+            <div class="un-content">
+                <h1>THE <span class="big">MONARCH</span> MIGRATION</h1>
+                <p>Monarch butterflies are known for their remarkable migration patterns, traveling thousands of miles between their breeding and overwintering grounds. This journey is one of the most extraordinary natural phenomena in the insect world. Monarchs are the only butterflies known to make a two-way migration as birds do. They travel between 1,200 and 2,800 miles each way, depending on the specific population and route.</p>
+            </div>
+            <div id="birds"></div>
         </div>
     </section>
     <footer>
-        <h1>Footer</h1>
+        <div class="footer-column">
+            <img src="images/blfy_logo_white.png" alt="">
+            <p>This site is a project for my Web-design course. Please note I'm no expert in regards to butterflies. However you may learn something about the fascinating world of butterflies and their importance to our ecosystem. <br><br> <span class="author">FALL 2024 - NATHAN JOHNSON</span></p>
+        </div>
+        <div class="footer-column">
+            <h3>Resources</h3>
+            <p>
+                <a class="f-links"href="https://www.vantajs.com/">Vanta.js - Wing Animation</a>
+                <br>
+                <a class="f-links"href="https://www.britannica.com/animal/butterfly-insect">Britannica</a>
+                <br>
+                <a class="f-links"href="https://www.w3schools.com/css/default.asp">W3-Schools</a>
+                <br>
+                <a class="f-links"href="https://github.com/ndevj/Butterfly-Website-Project">Git-Hub</a>
+                <br>
+                
+            </p>
+            
+            
+        </div>
+        <div class="footer-column">
+            <h3>Contact</h3>
+            <p>Get in touch with us for more information or to contribute to butterfly conservation efforts.Due the nature of this project this column is not necessary. However in footers contact info like email is good to put in here. For example <a class="f-links" href="email">johnnath@iu.edu</a></p>
+        </div>
+        <div class="footer-column">
+            <h3>News</h3>
+            <p>Stay updated with our latest news and discoveries about butterflies.                <a class="f-links"href="news.html">Visit our news page. Click Here.</a></p>
+        </div>
     </footer>
 </body>
 </html>
-
-<!-- byU60kBR77t8I -->

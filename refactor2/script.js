@@ -49,6 +49,79 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // lcGridContainer.style.width = initialWidth + "px";
     // lcGridContainer.style.height = initialHeight + "px";
+
+    const slider = document.getElementById('imageSlider');
+    const colorImg = document.querySelector('.color-img');
+    const xRayImg = document.querySelector('.x-ray-img');
+
+    // Set initial slider position to 50%
+    slider.value = 50;
+    colorImg.style.clipPath = `inset(0 ${100 - slider.value}% 0 0)`;
+    xRayImg.style.clipPath = `inset(0 0 0 ${slider.value}%)`;
+
+    slider.addEventListener('input', function() {
+        const value = slider.value;
+        colorImg.style.clipPath = `inset(0 ${100 - value}% 0 0)`;
+        xRayImg.style.clipPath = `inset(0 0 0 ${value}%)`;
+    });
+
+    // Handle bubble descriptions
+    const bubbleDescs = document.querySelectorAll('.bubble-desc');
+    const bubbleLeft = document.querySelector('.bubble-left');
+
+    bubbleDescs.forEach(bubble => {
+        bubble.addEventListener('mouseenter', () => {
+            const title = bubble.dataset.title;
+            const text = bubble.dataset.text;
+            
+            bubbleLeft.innerHTML = `
+                <h2>${title}</h2>
+                <p>${text}</p>
+            `;
+            bubbleLeft.classList.add('visible');
+        });
+
+        bubble.addEventListener('mouseleave', () => {
+            bubbleLeft.classList.remove('visible');
+        });
+    });
+
+    try {
+        VANTA.BIRDS({
+            el: "#birds",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 0.50,
+            scaleMobile: 1.00,
+            backgroundColor: 0xffffff,
+            color1: 0xe000ff,
+            color2: 0xff9200,
+            colorMode: "lerpGradient",
+            speedLimit: 2.00,
+            separation: 55.00,
+            alignment: 77.00,
+            cohesion: 4.00,
+            quantity: 4.00
+        });
+        console.log("VANTA.BIRDS initialized successfully");
+    } catch (error) {
+        console.error("Error initializing VANTA.BIRDS:", error);
+    }
+
+    VANTA.FOG({
+        el: "#inner",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        blurFactor: 0.90,
+        speed: 4.10,
+        zoom: 0.60
+      })
 });
 
 const scrollArrow = document.getElementById('scrollArrow');
@@ -72,8 +145,9 @@ newSectionArrow.addEventListener('click', () => {
     });
 });
 
-document.getElementById('imageSlider').addEventListener('input', function(e) {
-    const value = e.target.value;
-    document.querySelector('.color-img').style.clipPath = `inset(0 ${100 - value}% 0 0)`;
-});
+
+
+
+
+
 
