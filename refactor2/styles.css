@@ -469,7 +469,7 @@ footer {
 #content_ba .full-size{
     display: grid;
     grid-template-columns: 1fr;
-    grid-auto-rows: 0.6fr 0.4fr;
+    grid-auto-rows: 0.6fr 0.1fr 0.05fr;
     height: 100vh;
 }
 .full-size .ba-grid-item{
@@ -490,12 +490,13 @@ footer {
 .ba-grid-item img{
 
     width: 55%;
+    max-width: 60%;
     height: auto;
     object-fit: contain;
     border-radius: 0.625rem;
 
-    -webkit-filter: drop-shadow(5px 5px 20px #e7e7e7);
-    filter: drop-shadow(5px 5px 20px #c7c7c7);
+    -webkit-filter: drop-shadow(0.3125rem 0.3125rem 0.rem #e7e7e7);
+    filter: drop-shadow(0.2125rem 0.2125rem 0.6rem #c7c7c7);
 }
 
 .x-ray-img{
@@ -526,9 +527,11 @@ footer {
     width: 1.5625rem;
     height: 1.5625rem;
     border-radius: 1.5625rem;
-    background: #000000;
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgb(232, 232, 232) 90%, rgba(255,255,255,1) 100%);
     cursor: pointer;
-    /* box-shadow: 2px 0px 15px rgba(0, 0, 0, 0.493); */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.144);
+    border: 0.1px solid rgba(0, 0, 0, 0.144);
     
   }
 
@@ -673,10 +676,10 @@ footer {
 .ea-grid-container {
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 1fr;
+    grid-template-rows: 0.8fr;
     height: 100%;
     min-width: 100%;
-    gap: 5rem;
+    gap: 3rem;
 }
 
 .ea-grid-item {
@@ -887,7 +890,7 @@ footer {
 
 @media (max-width: 768px){
     html{
-        font-size: 14px;
+        font-size: 12px;
     }
     header{
         width: 100vw;
@@ -970,7 +973,7 @@ footer {
  
   }
 
-    /* Make .lc-desc-cell always visible */
+    
     .lc-desc-cell {
         opacity: 1;
     }
@@ -984,6 +987,24 @@ footer {
     .lc-video-desc-container:hover .lc-desc-cell,
     .lc-video-desc-container:hover::after {
         transition: none;
+    }
+    .ba-grid-item img{
+        min-width: 100%;
+    }
+    .slider{
+        min-width: 85%
+    }
+    .fc-grid-head{
+        font-size: 1rem;
+        letter-spacing: 1rem;
+        
+        
+    }
+    #content_un .full-size p{
+        min-width: 100%;
+    }
+    #content_ba{
+        display: none;
     }
 }
 
